@@ -1,0 +1,27 @@
+@import './common_variable/resource'
+
+.chat__header
+    width: 100%
+    height: $chat_window_header_height
+    box-sizing: border-box
+    background: linear-gradient(270deg, #707efc, #c9e5e9)
+    padding: 10px
+    .chat__header_container
+        display: flex
+        align-items: center
+        height: 100%
+        width: 100%
+        .back
+            font-size: 34px
+            text-decoration: none
+            line-height: 25px
+            align-self: flex-start
+            margin-top: 10px
+            font-weight: bolder
+            color: hsl(10%, 10deg, 10deg)
+        .chat__header_username.loading
+            min-width: 200px !important
+        .chat__header_username
+            text-align: left
+            font-size: 22px
+            margin-left: 10px

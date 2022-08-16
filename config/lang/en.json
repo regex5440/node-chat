@@ -1,0 +1,9 @@
+{
+    "username": {
+        "exists": "This username already exists",
+        "invalid": "Username should only contain letters, numbers and underscore (_)"
+    },
+    "password":{
+        "weak": "This password is too weak"
+    }
+}

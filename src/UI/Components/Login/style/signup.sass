@@ -1,0 +1,63 @@
+@mixin signup_input()
+    border-radius: 10px
+    padding: 10px
+    outline: none
+    border: 1px solid hsl(0deg, 10%, 70%)
+    &::placeholder
+        font-style: italic
+        color: hsl(0deg, 10%, 50%)
+    &:focus
+        outline: 1px green
+
+@mixin mui_textfield($type)
+    margin-top: 30px
+    *
+        border-radius: 10px
+    #{$type}
+        input
+            @include signup_input
+
+@mixin mui_textField_success
+    .MuiInputBase-colorSuccess > input
+        border-color: green !important
+    .MuiInputBase-colorSuccess + p
+        color: green
+
+.signup__form
+    .signup__name
+        display: grid
+        max-width: 100%
+        grid-template-columns: auto auto
+        grid-gap: 20px 5px
+        input
+            @include signup_input
+            &:hover
+                border-color: black
+        input.failed
+            border: 2px solid red
+        @media screen and (max-width: 642px)
+            grid-template-columns: auto
+            grid-template-rows: auto auto
+    .signup__username
+        position: relative
+        @include mui_textfield('.username')
+        .username input
+            padding-right: 25px
+        @include mui_textField_success
+        
+
+    .signup__password
+        @include mui_textfield('.password')
+        @include mui_textField_success
+
+    .signup__cta
+        position: relative
+        width: 80%
+        max-width: 384px
+        margin-left: auto
+        margin-right: auto
+        display: block
+        margin-top: 20px
+        background-color: hsl(271, 62%, 58%)
+        &:hover
+            background-color: hsl(271, 62%, 41%)

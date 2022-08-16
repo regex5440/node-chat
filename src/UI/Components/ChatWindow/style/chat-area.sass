@@ -1,0 +1,68 @@
+@import './common_variable/resource'
+
+$chat_input_margin_bottom: 10px
+$chat_input_padding_top: 10px
+
+.typebox
+    position: fixed
+    display: flex
+    flex-wrap: nowrap
+    justify-content: stretch
+    align-items: center
+    bottom: $chat_input_margin_bottom
+    left: 10px
+    right: 10px
+    width: calc( 100% - 20px)
+    height: $chat_window_input_height
+    box-sizing: border-box
+    border: 1px solid black
+    border-radius: 40px
+    padding: 0 0 0 $chat_input_padding_top
+    .typebox__input
+        border-radius: 40px
+        font-size: 15px
+        width: 100%
+        border: none
+        outline: none
+    .typebox__input::placeholder
+        font-style: italic
+    .typebox__submit
+        border-radius: 50%
+        display: flex
+        background: none
+        border: 0
+        box-shadow: none
+        cursor: pointer
+
+.messages__area
+    max-height: calc(100vh - ( $chat_window_header_height + $chat_window_input_height + $chat_input_margin_bottom ))
+    width: 100vw
+    box-sizing: border-box
+    display: block
+    background-color: pink
+    overflow: auto
+// .messages__area::-webkit-scrollbar
+//     display: none
+
+.message__container
+    width: 100%
+    .message__list__container
+        margin-top: 50px
+        width: 100%
+        height: 100%
+        box-sizing: border-box
+
+
+.message
+    max-width: 100%
+    padding: 1px 10px
+    height: auto
+    .message__container
+        background: linear-gradient(white, rgb(222,222,222))
+        width: fit-content
+        max-width: 60%
+        padding: 10px
+        border-radius: 7px
+.message.mine
+    .message__container
+        margin-left: auto
